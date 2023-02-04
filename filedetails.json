@@ -5,119 +5,208 @@
 setenv FORWARD_COMPATIBLE 1
 client
 dev tun
-remote 15.184.159.147 1194 udp
-remote 15.184.159.147 1194 udp
-remote 15.184.159.147 443 tcp
-remote 15.184.159.147 1194 udp
-remote 15.184.159.147 1194 udp
-remote 15.184.159.147 1194 udp
-remote 15.184.159.147 1194 udp
-remote 15.184.159.147 1194 udp
-remote-cert-tls server
-cipher AES-256-CBC
-auth SHA256
-persist-tun
+remote 3.8.77.91 5500 udp
+remote 3.8.77.91 5500 udp
+remote 3.8.77.91 444 tcp
+remote 3.8.77.91 5500 udp
+remote 3.8.77.91 5500 udp
+remote 3.8.77.91 5500 udp
+remote 3.8.77.91 5500 udp
+remote 3.8.77.91 5500 udp
+resolv-retry infinite
 nobind
+persist-key
+persist-tun
 verb 3
-socket-flags TCP_NODELAY
-
+cipher AES-256-CBC
+auth SHA512
+remote-cert-tls server
+key-direction 1
+comp-lzo
 <ca>
 -----BEGIN CERTIFICATE-----
-MIIDRDCCAiygAwIBAgIJAPRJm0V+RAQkMA0GCSqGSIb3DQEBCwUAMBsxGTAXBgNV
-BAMMEENsb3VkVlBOIFByb2QgQ0EwHhcNMTkxMDE2MTgwNDQ3WhcNNDkxMDA4MTgw
-NDQ3WjAbMRkwFwYDVQQDDBBDbG91ZFZQTiBQcm9kIENBMIIBIjANBgkqhkiG9w0B
-AQEFAAOCAQ8AMIIBCgKCAQEAvbodWcvyngHYGLVvLHTy9hLFIqrkxWQqi7gnC4RO
-Nz0VLzr9WckNN+kE7IrI9qbWL+F/4g5FKNOAayZf1Xc6YU2kV2JkXiScfGexsbFN
-rG+CFnphEdk2gJmDEFNxtDmxFVaTv7QCgtcijYEGMADW07sFfvDX0fjeKCTatSe6
-rVrQ0jCKsKoOtTiE2IvIlg41cvM7N7Pj/WVFs3Rwjbctd/i+bJ9A4j+G5gCR13KE
-Y48fCmkuvptaXZ8JyKoisoX46XTqDEQqBSG3exT6txlgsdqd+obp+CtuhPQQAVH4
-f04bM/wNDbFDWVPl0AbdKj9EmdBPIroLWi4VYtJeu4vjMQIDAQABo4GKMIGHMB0G
-A1UdDgQWBBTZQ8jn1xwiL3mg+FhSrS5WLh7bKDBLBgNVHSMERDBCgBTZQ8jn1xwi
-L3mg+FhSrS5WLh7bKKEfpB0wGzEZMBcGA1UEAwwQQ2xvdWRWUE4gUHJvZCBDQYIJ
-APRJm0V+RAQkMAwGA1UdEwQFMAMBAf8wCwYDVR0PBAQDAgEGMA0GCSqGSIb3DQEB
-CwUAA4IBAQBCk7zsTsiC0qEtwAfN1yo6VgbTBJf/rBDtoIjofVNDtpjaDZBA3/PT
-v+aJJEHSYaP7xNX91cP32Un09aG9BDT4OuLhYO3mOx+ghmFCCt5NhTvbT4gqmWfi
-MNaB8Z89gSaeuduD46btNjk+SeIWKBDrZlq0tJ9zexi6OEkre/XA7lssDTtE4GaC
-5xKtug1TxrzRziWv2OA14RLGq8n0Hhk40xdhrvE+bhWAUsd2fbfNxTzwhsfQrBH7
-K4FWB1sRavCTokSSJ7OX4R3w8QIn7Ziyqzu9JLJ5sy0EhVQxkQpuoW3BwmDVdXLS
-d4rhWO4aNE5qqE6lq5AOJ1riv7BrZ4jj
+MIIE+jCCA+KgAwIBAgIJAPb+c0l/iKXSMA0GCSqGSIb3DQEBCwUAMIGuMQswCQYD
+VQQGEwJVUzELMAkGA1UECBMCQ0ExFTATBgNVBAcTDFNhbkZyYW5jaXNjbzEVMBMG
+A1UEChMMRm9ydC1GdW5zdG9uMRIwEAYDVQQLEwlDb21tdW5pdHkxGDAWBgNVBAMT
+D0ZvcnQtRnVuc3RvbiBDQTEPMA0GA1UEKRMGc2VydmVyMSUwIwYJKoZIhvcNAQkB
+FhZ5YXNhci5yZWhtYW5AZ21haWwuY29tMB4XDTE4MDYxMTA3MTU0N1oXDTI4MDYw
+ODA3MTU0N1owga4xCzAJBgNVBAYTAlVTMQswCQYDVQQIEwJDQTEVMBMGA1UEBxMM
+U2FuRnJhbmNpc2NvMRUwEwYDVQQKEwxGb3J0LUZ1bnN0b24xEjAQBgNVBAsTCUNv
+bW11bml0eTEYMBYGA1UEAxMPRm9ydC1GdW5zdG9uIENBMQ8wDQYDVQQpEwZzZXJ2
+ZXIxJTAjBgkqhkiG9w0BCQEWFnlhc2FyLnJlaG1hbkBnbWFpbC5jb20wggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDIEeQXCsspii2Y8EuqnNEpGueqxkqu
+MksYePPdgBCa0Lundd5WwCsb+lQWJ99uPJONuh4ocnkOOk3A18WwEIhZQ3DhGH5E
+0wscfE3/SMjAgvfVabY7dsBavRd3N9Va6AyLvsqm9ePB32hQcT1LgFRss4WO5KZ2
+9qmArnhesFqJf4GScL126y4szmtLGtULmc7gJ+5SJgRg87Rv8fBM/CrvYQC5+weM
+kkblJSNjN7fcEV9zm+Yujomm5qYs+w0UYCwEQUwZEA74JqWrl4hIi2PbdFFeXEIP
+C9uvEZVRzADyugZVdvX9kXr0WcL3ZtepYPhzB9ho6zIUc8MZb16/+3Q7AgMBAAGj
+ggEXMIIBEzAdBgNVHQ4EFgQUtIaHmm02TpUxEjL1lANXfrcSerQwgeMGA1UdIwSB
+2zCB2IAUtIaHmm02TpUxEjL1lANXfrcSerShgbSkgbEwga4xCzAJBgNVBAYTAlVT
+MQswCQYDVQQIEwJDQTEVMBMGA1UEBxMMU2FuRnJhbmNpc2NvMRUwEwYDVQQKEwxG
+b3J0LUZ1bnN0b24xEjAQBgNVBAsTCUNvbW11bml0eTEYMBYGA1UEAxMPRm9ydC1G
+dW5zdG9uIENBMQ8wDQYDVQQpEwZzZXJ2ZXIxJTAjBgkqhkiG9w0BCQEWFnlhc2Fy
+LnJlaG1hbkBnbWFpbC5jb22CCQD2/nNJf4il0jAMBgNVHRMEBTADAQH/MA0GCSqG
+SIb3DQEBCwUAA4IBAQB4FIfEBBsR/g2gRabauXKFYW+L4/xTge0OP4bHcO/qcN0s
+BHXRK7RBE6CU02tLhOXMGO6ZAoneVM1DR4j39hoZTNFhmnYwCPECQq7xWLsjLDjg
+rHoNvtS2F1nbaRsaDvYilG+VLUm9SXHMyQQOkcVq7rq794ZRWFjFQ3qF1k9AgFWY
+7nTz2dlFwLI+/Cep6O9fcSkS0P9P2JQZLDtAP36dgYBkaNIqBu87AA5nHv03sBiL
+QybvKsKGbBqsHdH6iJYlBhtq1zKsVypMy+B0bm/iD5xl9DEYbnyJ/6uyLhnSJ+7/
+mv+sNByI8uRlLwe9R1GJWkhnYIhTvESBcgD45shy
 -----END CERTIFICATE-----
 </ca>
-
 <cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, OU=Community, CN=Fort-Funston CA/name=server/emailAddress=yasar.rehman@gmail.com
+        Validity
+            Not Before: Jun 11 07:17:54 2018 GMT
+            Not After : Jun  8 07:17:54 2028 GMT
+        Subject: C=US, ST=CA, L=SanFrancisco, O=Fort-Funston, OU=Community, CN=client1/name=server/emailAddress=yasar.rehman@gmail.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c2:2b:f4:2b:73:ff:69:82:13:ca:21:ed:ac:97:
+                    ec:2f:28:9e:b5:4b:c0:56:3b:44:01:b5:f5:53:97:
+                    f1:05:a4:24:f4:ec:4b:bd:81:30:10:bc:2a:db:9e:
+                    03:d8:11:c6:e4:6f:37:14:ae:ab:fe:ae:41:7c:26:
+                    61:53:39:72:92:33:a3:dd:45:d2:57:91:dc:87:3d:
+                    8a:d9:d4:76:3d:f4:08:4d:05:76:73:a4:86:26:ec:
+                    16:12:f6:d2:4b:24:da:b5:be:b8:ef:77:a3:8d:2c:
+                    d4:b7:ec:eb:0b:cc:fe:c1:a7:22:5e:30:71:bc:75:
+                    44:57:15:37:af:2d:cf:21:6d:ea:3b:be:e3:aa:7e:
+                    48:f8:67:56:17:95:92:54:89:71:da:b8:9f:d0:13:
+                    e1:7e:ab:e8:43:fd:49:27:f0:61:6f:75:4b:fa:45:
+                    53:63:13:5e:6f:6b:0a:22:8b:03:13:d5:f8:31:85:
+                    6c:35:6c:98:f5:88:5a:63:7a:e8:66:17:45:c1:e5:
+                    df:d6:99:21:cd:e1:a3:ca:8c:0f:ab:0e:37:cc:88:
+                    6f:93:59:ad:01:7c:27:0a:bc:c7:15:88:6e:aa:64:
+                    9a:d9:ac:9f:cf:a8:15:73:20:4b:6c:a1:85:a1:96:
+                    02:f0:1c:25:5f:c0:31:3b:14:d6:82:fd:94:4b:cb:
+                    de:4d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                C7:87:D7:A2:49:11:C9:BC:02:91:E8:0F:EB:26:19:59:D2:D2:E2:D6
+            X509v3 Authority Key Identifier: 
+                keyid:B4:86:87:9A:6D:36:4E:95:31:12:32:F5:94:03:57:7E:B7:12:7A:B4
+                DirName:/C=US/ST=CA/L=SanFrancisco/O=Fort-Funston/OU=Community/CN=Fort-Funston CA/name=server/emailAddress=yasar.rehman@gmail.com
+                serial:F6:FE:73:49:7F:88:A5:D2
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Subject Alternative Name: 
+                DNS:client1
+    Signature Algorithm: sha256WithRSAEncryption
+         14:c3:52:7a:60:8e:05:b1:d2:3c:40:79:11:06:85:db:02:9a:
+         9c:11:75:6b:54:18:85:57:b4:35:29:43:67:8b:7a:4a:56:84:
+         2e:5d:e2:29:4e:70:67:6d:a0:1e:b9:ef:ce:40:c6:fb:ae:09:
+         63:43:98:56:54:af:95:7e:f7:02:1a:55:f2:f1:71:d7:3a:da:
+         fb:7e:85:24:02:b8:c9:2b:8b:da:27:6c:85:e4:03:fe:81:82:
+         42:fc:7b:1b:f2:15:ca:ed:d1:fe:5a:13:60:58:e1:31:b1:b5:
+         c8:35:95:c7:c0:32:4b:78:d6:6e:18:92:cf:a1:55:6b:bb:43:
+         af:63:11:fd:91:79:f8:eb:ec:ae:c4:17:2d:38:4d:05:79:0a:
+         9f:8d:da:b7:84:a1:85:b8:58:f0:7d:85:7a:33:7c:02:91:3b:
+         08:46:46:a7:94:5b:cf:f5:37:df:d2:66:ef:d2:26:bf:84:1e:
+         8b:fe:10:80:45:ba:f5:08:34:fc:22:50:de:6e:d9:1b:b9:f9:
+         53:a4:db:76:f4:2d:23:97:b8:94:f4:6d:b6:56:04:37:15:56:
+         f3:f0:0c:2e:32:f2:01:b3:3d:10:8c:39:73:d6:1f:ee:74:1d:
+         21:70:9e:21:9d:e6:70:2c:85:fe:7d:cc:0b:13:05:f2:04:10:
+         80:89:aa:41
 -----BEGIN CERTIFICATE-----
-MIIDNDCCAhygAwIBAgIDAcLyMA0GCSqGSIb3DQEBCwUAMBsxGTAXBgNVBAMMEENs
-b3VkVlBOIFByb2QgQ0EwHhcNMjEwNjA3MDczNDQ5WhcNNDYwNjA4MDczNDQ5WjBW
-MVQwUgYDVQQDDEtyZXRhaWxvL21vZWVkLnNoYWhpZCU0MHJldGFpbG8uY29fMzcx
-My9hOTM3ZTMyZC02NTcwLTQwZDItYWRhMC0wNjQ1MGUzMTVlYWQwggEiMA0GCSqG
-SIb3DQEBAQUAA4IBDwAwggEKAoIBAQDTB6EBcZ3kue6bN3jAa0WLHaWo3w4Oxhcv
-pSWPwHs7MBdGsyadmpLk6CJ17Ztj9xF4NdCpSVoBbe5G585T4IXrSFOWhBxgZfcw
-pezNVPM2524E2yD27MOZUWJcutOaYm4HwH3iZG6h2t821REjegqaIrCTDbpi3QQa
-JaJqSY9uHJrPWFH7YN9JGwrMy4r26P1QUC7I4V9f1h3jCZy8c8q+hs+R+xKPpMK7
-5mo+EUmrGDy8RLzbDNTaJgkGFPqBJoBkrFYyjXc2i6ZeQ3DCPqK19cD0WKsel3qk
-BiJ6GRZl/zAXMmrwZtIpXzpMRHYPSlbDLjgakfC8MQo+vVR+42A3AgMBAAGjRjBE
-MA4GA1UdDwEB/wQEAwIChDATBgNVHSUEDDAKBggrBgEFBQcDAjAJBgNVHRMEAjAA
-MBIGA1UdEQQLMAmBB3JldGFpbG8wDQYJKoZIhvcNAQELBQADggEBAK5iQbWsxtTq
-uI6SbspZCYJcG7UwqKGKzjNh+jXltdTG6DH8JEEDWPJi+K//pGWwmoZEShrD9PTp
-yBeVwKOWaXYNGMNCcnaBhNX/4rG3iAqEyankql9tCSdV55EwgRof9xLc1ThVS6EH
-ohEGz282BBe97ImrO2dEXXAHhW+YLNm722+y01VgyKBQeszq0RNFGU4ApJNmP12o
-gS1AjNlqDW4gonn3tuVOC4u3owVJcTmoIsIirdNJwkDmrtK44TXDj4YaF4piH23C
-rpB2vaN1uta/AFKEUVuu5npm8nYEjBstKy+lwpWeJ5M+RJtI2pQ+485aBJDuniDQ
-09JDTbkbEng=
+MIIFTDCCBDSgAwIBAgIBAjANBgkqhkiG9w0BAQsFADCBrjELMAkGA1UEBhMCVVMx
+CzAJBgNVBAgTAkNBMRUwEwYDVQQHEwxTYW5GcmFuY2lzY28xFTATBgNVBAoTDEZv
+cnQtRnVuc3RvbjESMBAGA1UECxMJQ29tbXVuaXR5MRgwFgYDVQQDEw9Gb3J0LUZ1
+bnN0b24gQ0ExDzANBgNVBCkTBnNlcnZlcjElMCMGCSqGSIb3DQEJARYWeWFzYXIu
+cmVobWFuQGdtYWlsLmNvbTAeFw0xODA2MTEwNzE3NTRaFw0yODA2MDgwNzE3NTRa
+MIGmMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExFTATBgNVBAcTDFNhbkZyYW5j
+aXNjbzEVMBMGA1UEChMMRm9ydC1GdW5zdG9uMRIwEAYDVQQLEwlDb21tdW5pdHkx
+EDAOBgNVBAMTB2NsaWVudDExDzANBgNVBCkTBnNlcnZlcjElMCMGCSqGSIb3DQEJ
+ARYWeWFzYXIucmVobWFuQGdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEP
+ADCCAQoCggEBAMIr9Ctz/2mCE8oh7ayX7C8onrVLwFY7RAG19VOX8QWkJPTsS72B
+MBC8KtueA9gRxuRvNxSuq/6uQXwmYVM5cpIzo91F0leR3Ic9itnUdj30CE0FdnOk
+hibsFhL20ksk2rW+uO93o40s1Lfs6wvM/sGnIl4wcbx1RFcVN68tzyFt6ju+46p+
+SPhnVheVklSJcdq4n9AT4X6r6EP9SSfwYW91S/pFU2MTXm9rCiKLAxPV+DGFbDVs
+mPWIWmN66GYXRcHl39aZIc3ho8qMD6sON8yIb5NZrQF8Jwq8xxWIbqpkmtmsn8+o
+FXMgS2yhhaGWAvAcJV/AMTsU1oL9lEvL3k0CAwEAAaOCAXkwggF1MAkGA1UdEwQC
+MAAwLQYJYIZIAYb4QgENBCAWHkVhc3ktUlNBIEdlbmVyYXRlZCBDZXJ0aWZpY2F0
+ZTAdBgNVHQ4EFgQUx4fXokkRybwCkegP6yYZWdLS4tYwgeMGA1UdIwSB2zCB2IAU
+tIaHmm02TpUxEjL1lANXfrcSerShgbSkgbEwga4xCzAJBgNVBAYTAlVTMQswCQYD
+VQQIEwJDQTEVMBMGA1UEBxMMU2FuRnJhbmNpc2NvMRUwEwYDVQQKEwxGb3J0LUZ1
+bnN0b24xEjAQBgNVBAsTCUNvbW11bml0eTEYMBYGA1UEAxMPRm9ydC1GdW5zdG9u
+IENBMQ8wDQYDVQQpEwZzZXJ2ZXIxJTAjBgkqhkiG9w0BCQEWFnlhc2FyLnJlaG1h
+bkBnbWFpbC5jb22CCQD2/nNJf4il0jATBgNVHSUEDDAKBggrBgEFBQcDAjALBgNV
+HQ8EBAMCB4AwEgYDVR0RBAswCYIHY2xpZW50MTANBgkqhkiG9w0BAQsFAAOCAQEA
+FMNSemCOBbHSPEB5EQaF2wKanBF1a1QYhVe0NSlDZ4t6SlaELl3iKU5wZ22gHrnv
+zkDG+64JY0OYVlSvlX73AhpV8vFx1zra+36FJAK4ySuL2idsheQD/oGCQvx7G/IV
+yu3R/loTYFjhMbG1yDWVx8AyS3jWbhiSz6FVa7tDr2MR/ZF5+OvsrsQXLThNBXkK
+n43at4ShhbhY8H2FejN8ApE7CEZGp5Rbz/U339Jm79Imv4Qei/4QgEW69Qg0/CJQ
+3m7ZG7n5U6TbdvQtI5e4lPRttlYENxVW8/AMLjLyAbM9EIw5c9Yf7nQdIXCeIZ3m
+cCyF/n3MCxMF8gQQgImqQQ==
 -----END CERTIFICATE-----
 </cert>
-
 <key>
------BEGIN RSA PRIVATE KEY-----
-MIIEogIBAAKCAQEA0wehAXGd5Lnumzd4wGtFix2lqN8ODsYXL6Ulj8B7OzAXRrMm
-nZqS5Ogide2bY/cReDXQqUlaAW3uRufOU+CF60hTloQcYGX3MKXszVTzNuduBNsg
-9uzDmVFiXLrTmmJuB8B94mRuodrfNtURI3oKmiKwkw26Yt0EGiWiakmPbhyaz1hR
-+2DfSRsKzMuK9uj9UFAuyOFfX9Yd4wmcvHPKvobPkfsSj6TCu+ZqPhFJqxg8vES8
-2wzU2iYJBhT6gSaAZKxWMo13NoumXkNwwj6itfXA9FirHpd6pAYiehkWZf8wFzJq
-8GbSKV86TER2D0pWwy44GpHwvDEKPr1UfuNgNwIDAQABAoIBACtE1azjnGHBA9z8
-fzxI4m33Sre44HuD/04MGQsEBuBoaGVdJ05KWtMni6VNbj6Ncp4IvrtvKE7BuQj9
-z47gKuVGo6jpdp4HWis14jtpryKzShohyf0HJ8Xga4Ai6G8vvmrFe6o3OH3kUD9A
-aa6x/8mB0l2cg3pw4b3wuH/9jDShtoLinK+wEvxedGyv7YGvCBaiIB+/c/p7StfJ
-w4xxtt3HruLPbT/9L6SN+c49B6jn7nnrmdec/4QJORKXdcZEP3spkHU9+UgltUw5
-FbO+TvyTg6qO6UZd43jHdenr6ItOylv8Dlws1pblym8XbWIPD4raqZQwkeqz98IA
-jpi/+6UCgYEA6/1fPWZf8NuaRaRfOH3EviBnL5ckXxPpxvSccPFj/yGCHD4ECsi6
-z2iAy0Vkp3wybDNS83I8pk06gYbQydFRUAPJZvwUKA8JKponHxEC0/M+g/I+VvFP
-OcvDnT1FXM74bKxV47rBp9uzXxaSbAYIuLX15KOIueM1Tyx1C2UWhE0CgYEA5Oxz
-pQqSq2DVyjaZmmOkQYSM5gyWSO4tQn9Yu3at2PCTaNtsG6/kSi9ZkuOMu/rM8g7r
-mYK+sL7WzK9Z00jBiuH57UhkjXCXFC06R0stJLZNzfeVywWzSSq7zlbTZGh38XCW
-gjHXN5ZL79gqmt91ihZv16d/0yNce5pgvF+fCJMCgYADjOpT6ChlXUhy58gu92Vw
-XthulN2NOKV5wtBfuqIAgqaMejphVyfIWxAk/sRG6M1xZ0xGMV/MOLk6naaigq2w
-gH4VOJGtEJzYsT0JcJ4URkKYhZp+gF7qxbAJu5RBkzOVnvoj1Pl45wtJ0PMfAPA8
-pzAt4m/6K/rvWAHizACMuQKBgFarXq0hb54Kr2Y7fbQB/XIAqQd/xHYgFmqSpBl1
-OSRlEKomSKvCz/92JceC9wlETstl8rTP1zo7Rj+AM9XWOdBG9cRsIAWcltZAuUu8
-nn7DtnlAPyn6IoKU9z2LicT9+EskgRcRn5WgBWfsw1SXPXzmObm/5JkfTihNrkoj
-OaaZAoGAK7qMxFFe8kv936XgpRUeGU3Pgf+AqSGEVLz7c2a6u5gyFqwiAmAZb6f4
-KnpQOFkbQPr00b+2Evto7GXbABiOBYpGBptf/iZT9U7/vtDlqXOlVEyh4K4yRCrk
-gKcKXMlc70aETTlF2/4YdpX4wFrgXm+/85f/rX4yvcSfrZML9DI=
------END RSA PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
+MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDCK/Qrc/9pghPK
+Ie2sl+wvKJ61S8BWO0QBtfVTl/EFpCT07Eu9gTAQvCrbngPYEcbkbzcUrqv+rkF8
+JmFTOXKSM6PdRdJXkdyHPYrZ1HY99AhNBXZzpIYm7BYS9tJLJNq1vrjvd6ONLNS3
+7OsLzP7BpyJeMHG8dURXFTevLc8hbeo7vuOqfkj4Z1YXlZJUiXHauJ/QE+F+q+hD
+/Ukn8GFvdUv6RVNjE15vawoiiwMT1fgxhWw1bJj1iFpjeuhmF0XB5d/WmSHN4aPK
+jA+rDjfMiG+TWa0BfCcKvMcViG6qZJrZrJ/PqBVzIEtsoYWhlgLwHCVfwDE7FNaC
+/ZRLy95NAgMBAAECggEBALVm8O+jqEu+3ZQrDGwBZwNL1LIVejRVnBxpDTAytFcL
+2gcDt2LtDaWk1fllb7vuJ72EdZYZ9c+yprVA+g4RjosuOXng4Dk1qSyj/1OwnWMV
+2Kd0Ygx5+Wbli13eP+s6HCZNb2Mxh5e9+WF3ssPMmXj8Fyyd37QsblNZHDPJ/UgB
+UcKXZhSa8BBhHkdCtRXJL2GgEJDu//gbEU4UhsJQ7r+FMdDHGR/rBY/lwBoTLSMU
+5jHn7tArw7qJw84KRyZBoFikkv8D/QkngWHsXi1cJRaEsF+zVs6L175qO5PxIJOJ
+F7i5iNQ3kUgPfAC6AU6gnhninxPcLvtlQxrYcar/30ECgYEA7RlxWZ7SwOxFNGvR
+jfyzVygbusyxZljygKeRPf5muU99r+X4Xq/3Vhx2LKkaZ5idl1pX+NbVTU6psOmA
+nKDun1Pkl5iFIfBlp2OH4aiPrpA5AAhC/uTtSMxRmwMTrcR2kr/bysUZHVQdmcBN
+ZvvHQStdKKLoHtcqfpQGIrTSQJECgYEA0aZ5EhitdMZsmoew0MzD/aTDU7fFK17P
+OoqqVL9HahDwvATxjUhgWccQ6ZEoj5SmYAjNn7B7Fv42UZKSKuMjfxRlCbGrq8CM
+ZQ8s4xjVN9JH+Qj2s1JfAECXyyXZes57tZDCp953aia+EpIZoiv+df7T5bwurDeN
+YKAqhddon/0CgYEAgWemhux5SJRrvQ2vpNgsJcCdSdnYZOzdBjzut7A27qMlDTDt
+2vgdfWExWnS9FZelQ2sqooTWjEgHs6ft6w6mzkzicZ7r4rcrNC3NhusR6IuMoKjh
+r+7QVzA0xe7q+adFtBiE5GmoqGo1caoUVMXMXZRGVxx6pgJ3jfhKVPzt2BECgYEA
+sKzm6K4tNvSkv1FMW5nELPN1vA5pNZRvdLk4s7SCfUsLZJeR7Gsq712Hzh2LHfy6
+fMHObx2tjYHryrCHR2clGcnZH+M/db0NU3kHbdYWkTU/fAnmxNXMw4yrnwIllY1+
+yVLWB9u9rJI7qbC/s1/5z/xRHBCLEIy8MsqnKyWNwQ0CgYAkPxUy+DIUbXognTdG
+dvCJjw9inKZLzPrg2VGr+fKw2Fl9lWA77sSy07+LDDQxOqDbDyQho0YnMzmdnujs
+XtJhTria2vD6ZfhNSFjaweQiufhQhRrJL7PpEb1KOAQKpvy/NLPWbGSG/55d3HJi
++DD2h0NXoPj4cj9nIQW25wKd/g==
+-----END PRIVATE KEY-----
 </key>
-
-key-direction 1
-<tls-auth>
+<tls-crypt>
+#
+# 2048 bit OpenVPN static key
+#
 -----BEGIN OpenVPN Static key V1-----
-4f65292e639c83574026ab790f67257b
-e92f02e96e3c95db3634393b0c3c094b
-71dbef6ab0e715aff9e5d574a69f015e
-acb57293a0cb91c57cb4f9064a000d3b
-640285c8af740c1910193be5e3ab81af
-009e16f916478a1c3a629057cc622afd
-8a705bd893c316a944f1fda6a2e5c1b3
-4af9fc0233f15fac4a2b125ab9aaaa4d
-8604bebe99e5c2470edda8c39eeb2609
-d8c1db928e1035880fc4a2c695057e21
-335867cfdea9f041c7b2090702667ed4
-8ddb8310edb9320a41a570624812dfaf
-d7ca0131085f044490dae138c61bbf63
-15bb98cea0628b99a10de850ed7ee43e
-0dd7e5f446439846a4f2319ec5f735f8
-521021b9e6d45cdee7bfd22fce270a49
+b5e61c2a0654bc1de5235e13e119bddb
+eb48214bc66165a737073581e37530c8
+27082f5cb1adb38ae47fd97575747d28
+eb574808f36dfa0c3231b452491fb5a3
+7069a1c0e1838e86ec042184c880f241
+cef4bffbf5824534499d8f306ac105c6
+cf8d162c2b0e9685d054fc64136fbf0f
+2062889b40e3edf4b579dbe2592d4d75
+e07390a41d30c65c9a80cbd1e04adf90
+a7088ef7dffae5ea09a385c2319712d5
+3a44accf82dba6749c98364a470708b0
+0315bcda7678b8560cf6d4aa98f9a7f0
+f0b5e06438828d2465c582468ce9a5bc
+7f112b54885c2e534813eca3427089c1
+20518826b99bd29bb017c3e2ece2e706
+c8094f546ccbfb08581b999242b49c2c
 -----END OpenVPN Static key V1-----
-</tls-auth>"
+</tls-crypt>"
         }
     ]
 }
